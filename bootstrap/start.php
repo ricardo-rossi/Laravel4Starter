@@ -24,11 +24,10 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment([
+$env = $app->detectEnvironment(function(){
 
-	'local' => ['7H9YYN1', 'macpro.local'],
-
-]);
+	return getenv('ENV') ?: 'development';
+});
 
 /*
 |--------------------------------------------------------------------------
