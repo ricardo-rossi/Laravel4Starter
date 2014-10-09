@@ -27,15 +27,20 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(function ()
 {
 
-	$prod = ['PRODUCTION_HOSTNAME'];
+	$prodHosts = ['PROD_HOSTNAME'];
+	$qaHosts = ['QA_HOSTNAME'];
 
-	if (in_array(gethostname(), $prod))
+	if (in_array(gethostname(), $prodHosts))
 	{
 		return 'production';
 	}
+	elseif (in_array(gethostname(), $qaHosts))
+	{
+		return 'qa';
+	}
 	else
 	{
-		return 'development';
+		return 'develop';
 	}
 });
 
