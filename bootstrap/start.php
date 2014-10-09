@@ -24,9 +24,19 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(function(){
+$env = $app->detectEnvironment(function ()
+{
 
-	return getenv('ENV') ?: 'development';
+	$prod = ['PRODUCTION_HOSTNAME'];
+
+	if (in_array(gethostname(), $prod))
+	{
+		return 'production';
+	}
+	else
+	{
+		return 'development';
+	}
 });
 
 /*
