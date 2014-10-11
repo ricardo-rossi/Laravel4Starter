@@ -4,6 +4,6 @@ class TestRepository {
 
 	public function hello()
 	{
-		return 'helloooo repos!';
+		return 'helloooo repos';
 	}
 } 
