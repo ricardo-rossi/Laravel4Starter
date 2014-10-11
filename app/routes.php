@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/test', 'HomeController@showWelcome');
+
 Route::get('/', function ()
 {
 	return View::make('hello');

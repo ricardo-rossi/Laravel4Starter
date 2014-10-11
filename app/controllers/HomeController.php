@@ -1,5 +1,7 @@
 <?php
 
+use App\Repositories\TestRepository;
+
 class HomeController extends BaseController {
 
 	/*
@@ -15,9 +17,17 @@ class HomeController extends BaseController {
 	|
 	*/
 
+	private $testRepo;
+
+	function __construct(TestRepository $testRepo)
+	{
+		$this->testRepo = $testRepo;
+	}
+
 	public function showWelcome()
 	{
-		return View::make('hello');
+		return $this->testRepo->hello();
+		//return View::make('hello');
 	}
 
 }
