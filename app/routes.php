@@ -12,6 +12,9 @@
 */
 
 Route::get('/test', 'HomeController@showWelcome');
+Route::get('/dude', 'HomeController@dude');
+Route::get('/hey', 'HomeController@hey');
+Route::get('/nice', 'HomeController@nice');
 
 Route::get('/', function ()
 {

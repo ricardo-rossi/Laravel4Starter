@@ -1,7 +1,5 @@
 <?php
 
-use App\Repositories\TestRepository;
-
 class HomeController extends BaseController {
 
 	/*
@@ -18,10 +16,21 @@ class HomeController extends BaseController {
 	*/
 
 	private $testRepo;
+	private $userRepo;
+	private $heyRepo;
 
-	function __construct(TestRepository $testRepo)
+	private $niceRepo;
+
+	function __construct(\App\Repos\TestRepo $testRepo,
+	                     \App\Repos\UserRepo $userRepo,
+	                     \App\Repos\HeyRepo $heyRepo,
+	                     \App\Repos\NiceRepo $niceRepo)
 	{
+
 		$this->testRepo = $testRepo;
+		$this->userRepo = $userRepo;
+		$this->heyRepo = $heyRepo;
+		$this->niceRepo = $niceRepo;
 	}
 
 	public function showWelcome()
@@ -30,4 +39,18 @@ class HomeController extends BaseController {
 		//return View::make('hello');
 	}
 
+	public function dude()
+	{
+		return $this->userRepo->test();
+	}
+
+	public function hey()
+	{
+		return $this->heyRepo->show();
+	}
+
+	public function nice()
+	{
+		return $this->niceRepo->show();
+	}
 }

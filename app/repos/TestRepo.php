@@ -1,6 +1,6 @@
-<?php namespace App\Repositories;
+<?php namespace App\Repos;
 
-class TestRepository {
+class TestRepo extends BaseRepo {
 
 	public function hello()
 	{

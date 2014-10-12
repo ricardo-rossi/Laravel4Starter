@@ -21,7 +21,7 @@
 			"app/tests/TestCase.php"
 		],
         "psr-4": {
-            "App\\": "app/repositories"
+            "App\\": "app/repos"
         }
 	},
 	"scripts": {
