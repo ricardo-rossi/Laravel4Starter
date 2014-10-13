@@ -1,5 +1,10 @@
 <?php
 
+use App\Repos\HeyRepo;
+use App\Repos\NiceRepo;
+use App\Repos\TestRepo;
+use App\Repos\UserRepo;
+
 class HomeController extends BaseController {
 
 	/*
@@ -18,13 +23,12 @@ class HomeController extends BaseController {
 	private $testRepo;
 	private $userRepo;
 	private $heyRepo;
-
 	private $niceRepo;
 
-	function __construct(\App\Repos\TestRepo $testRepo,
-	                     \App\Repos\UserRepo $userRepo,
-	                     \App\Repos\HeyRepo $heyRepo,
-	                     \App\Repos\NiceRepo $niceRepo)
+	function __construct(TestRepo $testRepo,
+	                     UserRepo $userRepo,
+	                     HeyRepo $heyRepo,
+	                     NiceRepo $niceRepo)
 	{
 
 		$this->testRepo = $testRepo;
